@@ -10,10 +10,12 @@ class CartItem extends React.Component{
             qty : 1,
             img: ''
         }
+        this.Increase = this.Increase.bind(this);
+        this.Decrease = this.Decrease.bind(this);
     }
 
 
-    Increase = () => {
+    Increase() {
       this.setState( (prevState) => {
         return {
           qty: prevState.qty +=1
@@ -22,7 +24,7 @@ class CartItem extends React.Component{
       } )
     }
 
-    Decrease = () => {
+    Decrease() {
       this.setState( (prevState) => {
         if(prevState.qty === 0){
           return;
